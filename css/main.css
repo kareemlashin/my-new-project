@@ -1,3 +1,67 @@
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #FFC576;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
 header {
     background-color: #344659;
     width: 100%;
@@ -8,17 +72,35 @@ header {
     color: #FFC576 !important;
 }
 
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #344659;
+    z-index: 99999999999999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar .navbar-nav .nav-item .nav-link {
     color: white !important;
 }
 
 .navbar .navbar-nav .nav-item .active {
     color: #FFC576 !important;
-
 }
 
-.bg-light {
-    background-color: transparent !important;
+.bg-offset {
+    background-color: #344659 !important;
+}
+
+@media (max-width:800px) {
+    .bg-resize {
+        background-color: #344659 !important;
+    }
 }
 
 header {
@@ -53,7 +135,11 @@ header {
     padding: 20px;
     border: 2px solid #FFC576;
     border-radius: 50%;
-background-color: #FFC576;
+    background-color: #FFC576;
+}
+
+ul {
+    padding: 0 !important;
 }
 
 header .icon-2 ul li {
@@ -77,16 +163,12 @@ header .icon-2 ul li {
 .icon-2 i:hover {
     color: #fff;
     background-color: #FFC576;
-
 }
 
-
 @media (min-width: 0px) and (max-width: 863px) {
-
     .im {
         opacity: 0;
     }
-
 }
 
 .title-2 h2 {
@@ -105,6 +187,34 @@ header .icon-2 ul li {
 
 .title-2 h2 span {
     color: #FFC576;
+}
+
+.progress {
+    height: 5px !important;
+}
+
+sup {
+    color: #FFC576;
+}
+
+.price {
+    font-size: 22px;
+}
+
+.barfiller {
+    width: 100%;
+    height: 12px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.barfiller .fill {
+    display: block;
+    position: relative;
+    width: 0px;
+    height: 100%;
+    background: #FFC576;
+    z-index: 1;
 }
 
 .about ul {
@@ -135,8 +245,7 @@ header .icon-2 ul li {
 .sec2 .card-1 {
     background-color: #fff;
     border-radius: 5px;
-    transition: 0.5 transform;
-
+    transition: 1s transform;
 }
 
 .sec2 .card-1:hover {
@@ -160,7 +269,7 @@ header .icon-2 ul li {
     box-shadow: 0px 0px 27px 10px rgba(86, 115, 121, 0.15);
     border: none;
     border-radius: 8px;
-    transition: 0.5s transform;
+    transition: 1s transform;
 }
 
 .card-2:hover {
@@ -173,7 +282,6 @@ header .icon-2 ul li {
     color: #FFC576;
     background-color: #fff;
     border: 1px solid #FFC576;
-
 }
 
 @media (min-width: 0px) and (max-width: 763px) {
@@ -203,7 +311,7 @@ header .icon-2 ul li {
 .card-4 {
     position: relative;
     border-radius: 10px;
-    transition: 0.5 transform;
+    transition: 1s transform;
 }
 
 .line::before {
@@ -220,7 +328,7 @@ header .icon-2 ul li {
     color: #FFC576;
     border: none;
     background-color: transparent;
-    transition: 0.3 transform;
+    transition: 1s transform;
 }
 
 .card-4:hover button {
@@ -249,8 +357,9 @@ header .icon-2 ul li {
 }
 
 @media (min-width: 0px) and (max-width: 1000px) {
-    .sec-5 .project{
-width: 100%;   }
+    .sec-5 .project {
+        width: 100%;
+    }
 }
 
 .pull-right {
@@ -267,7 +376,6 @@ width: 100%;   }
     border-radius: 8px;
     width: 150px;
 }
-
 
 .bg-warning {
     background-color: #FFC576 !important;
@@ -296,7 +404,6 @@ width: 100%;   }
     background-color: rgba(255, 255, 255, 0.02);
     transition: 1s transform;
     border-radius: 10px;
-
 }
 
 .card-0:hover {
@@ -316,10 +423,14 @@ width: 100%;   }
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 }
 
-.chose .chose1 {
+.activeX {
     color: #FFC576;
+    border: 1px solid #FFC576;
+    padding: 8px 10px;
+    border-radius: 10px;
 }
 
 .im-2 {
@@ -347,6 +458,7 @@ width: 100%;   }
 }
 
 /* */
+
 .trans2 {
     position: absolute;
     top: 0%;
@@ -367,6 +479,7 @@ width: 100%;   }
 }
 
 /**/
+
 .trans3 {
     position: absolute;
     top: 0%;
@@ -387,6 +500,7 @@ width: 100%;   }
 }
 
 /* */
+
 .trans4 {
     position: absolute;
     bottom: 100%;
@@ -407,6 +521,7 @@ width: 100%;   }
 }
 
 /* */
+
 .trans5 {
     position: absolute;
     top: 0%;
@@ -429,6 +544,7 @@ width: 100%;   }
 }
 
 /* */
+
 .trans6 {
     position: absolute;
     top: 5%;
@@ -448,11 +564,10 @@ width: 100%;   }
     height: 90%;
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.8);
-
 }
 
 .cover2 {
-    background-image: url(../parallax_img_1920x720.png);
+    background-image: url(../img/parallax_img_1920x720.png);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -462,7 +577,6 @@ width: 100%;   }
 .overly {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
-
 }
 
 .cover2 h2 span {
@@ -500,9 +614,7 @@ ul {
 @media (min-width: 0px) and (max-width: 1000px) {
     .card-0 {
         margin-bottom: 20px;
-
     }
-
 }
 
 .sec-9 .disc-9 span i {
@@ -523,7 +635,6 @@ ul {
 
 .sec-9 .col-md-6 .card {
     transition: 1s transform;
-
 }
 
 .sec-9 .card {
