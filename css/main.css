@@ -419,11 +419,17 @@ sup {
 
 .chose {
     margin: auto;
-    width: 50%;
+    width: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
+}
+
+@media (max-width:1000px) {
+    .chose {
+        width: 100%;
+    }
 }
 
 .activeX {
