@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#loading").fadeOut(1000, function () {
         $("html,body").css({ overflow: "auto" })
     })
-    AOS.init();
+
 
     $(".chose .chosex a").click(function () {
         let dataChose = $(this).attr("data-filter");
